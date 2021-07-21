@@ -1,0 +1,23 @@
+<h1>Show Nav</h1>
+
+<ul>
+
+  <li>
+    <strong>Total nav:</strong>
+    <%= @nav.total_nav %>
+  </li>
+
+  <li>
+    <strong>Total units number:</strong>
+    <%= @nav.total_units_number %>
+  </li>
+
+  <li>
+    <strong>Nav:</strong>
+    <%= @nav.nav %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.nav_path(@conn, :edit, @nav) %></span>
+<span><%= link "Back", to: Routes.nav_path(@conn, :index) %></span>

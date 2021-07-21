@@ -1,0 +1,30 @@
+<h1>Listing Navs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Total nav</th>
+      <th>Total units number</th>
+      <th>Nav</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for nav <- @navs do %>
+    <tr>
+      <td><%= nav.total_nav %></td>
+      <td><%= nav.total_units_number %></td>
+      <td><%= nav.nav %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.nav_path(@conn, :show, nav) %></span>
+        <span><%= link "Edit", to: Routes.nav_path(@conn, :edit, nav) %></span>
+        <span><%= link "Delete", to: Routes.nav_path(@conn, :delete, nav), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Nav", to: Routes.nav_path(@conn, :new) %></span>
