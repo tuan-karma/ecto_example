@@ -122,7 +122,7 @@ new_parent_changeset = Ecto.Changeset.put_assoc(parrent_changeset, :assoc_name, 
 
   * Hàm này sẽ thay thế/update toàn bộ dữ liệu con trong liên kết sẵn có của cấu trúc mẹ. Lưu ý tùy chọn `:on_replace` trong Schema của dữ liệu mẹ. Lưu ý: cần phải preload dữ liệu con trước khi thao tác.
   * Khi gọi Repo.insert cho the `new_parent_changeset` mới tạo ra, nó sẽ ghi nhận (cập nhật) toàn bộ dữ liệu mẹ và các liên kết con mới tạo ra trong một transaction. Lưu ý, hàm này sẽ bỏ qua các kiểm tra trong changeset, nên cẩn trọng.
-  * `put_assoc` là lựa chọn tốt khi làm việc với các bản ghi mẹ và con tách rời, kể cả khi làm việc với các dữ liệu đến từ bên ngoài. Bạn có thể sử dụng changeset đẻ tạo/cập nhật/xóa bản ghi con riêng biệt, sau đó sử dụng `put_assoc` trong một changeset riêng để cập nhật tập hợp bản ghi trong dữ liệu mẹ. Trường hợp thường thấy là khi làm việc với mối liên kết many_to_many, ví dụ như gắn tags vào các bài posts.
+  * `put_assoc` là lựa chọn tốt khi làm việc với các bản ghi mẹ và con tách rời, kể cả khi làm việc với các dữ liệu đến từ bên ngoài. Bạn có thể sử dụng changeset để tạo/cập nhật/xóa bản ghi con riêng biệt, sau đó sử dụng `put_assoc` trong một changeset riêng để cập nhật tập hợp bản ghi trong dữ liệu mẹ. Trường hợp thường thấy là khi làm việc với mối liên kết many_to_many, ví dụ như gắn tags vào các bài posts.
 
 
 ### `Ecto.Changeset.cast_assoc/3`
